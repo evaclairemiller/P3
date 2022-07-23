@@ -55,6 +55,9 @@ main {
         width: 165px;
         padding: 20px 0px 8px 0px;
     }
+    .logo {
+        box-shadow: 0px 0px 8px darkgrey;
+    }
 }
 
 #location
@@ -170,7 +173,7 @@ main {
     background-color: $lightBkgnd;
 }
 
-#restList {
+.restList {
     padding: 25px 0px 25px 0px;
     display: flex;
     flex-flow: column wrap;
@@ -276,4 +279,117 @@ footer {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+}
+
+/* RESTAURANT PAGES */
+
+.fa-arrow-left {
+    position: absolute;
+    font-size: 20px;
+    left: 26px;
+    top: 20px;
+}
+
+.menu {
+    background-color: #f6f6f6;
+    padding: 5px 0px 0px 0px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    position: relative;
+    top: -50px;
+    width: 100%;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 30px 0px 20px;
+    .fa-solid {
+        font-weight: 100;
+        font-size: 22px;
+        &:hover {
+            background: linear-gradient(175deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 95%);
+            font-weight: 600;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+img {
+    object-fit: cover;
+    height: 280px;
+    width: 100%;
+}
+
+.list {
+    padding: 20px 15px 20px 15px;
+    > p {
+        padding-top: 10px;
+        border-bottom: #99E2D0 3px;
+        border-style: solid;
+        width: 45px;
+        padding-bottom: 4px;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    .detail-list {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0;}
+    to { transform: translateX(0px); opacity: 1;}
+}
+
+.rest-info-1, .rest-info-2, .rest-info-3, .rest-info-4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 2px 8px 4px #00000008;
+    padding: 15px 25px 15px 15px;
+    animation-name: fadeInUp;
+    animation-duration: 500ms;
+}
+
+.rest-info-1 {
+    animation-delay: 150ms;
+}
+
+.rest-info-2 {
+    animation-delay: 250ms;
+}
+
+.rest-info-3 {
+    animation-delay: 350ms;
+}
+
+.rest-info-4 {
+    animation-delay: 450ms;
+}
+
+.list-desc {
+    font-size: 16px;
+}
+
+.price {
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+}
+
+.commander {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
 }
