@@ -130,7 +130,7 @@ main {
     right: 12.5px;
 }
 
-#foncList
+.foncList
 {
     display: flex;
     flex-direction: column;
@@ -343,7 +343,6 @@ img {
     }
 }
 
-
 @keyframes fadeInUp {
     from { transform: translateY(20px); opacity: 0;}
     to { transform: translateX(0px); opacity: 1;}
@@ -392,4 +391,33 @@ img {
     padding-top: 30px;
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (min-width: 992px)
+{
+    .foncList
+    {
+        flex-direction: row;
+        justify-content: space-between;
+        &--item {
+            width: 30%;
+            gap: 4px;
+        }
+    }
+
+    .restList
+    {
+        flex-direction: row;
+        justify-content: space-between;
+        a {
+            width: 30%;
+        }
+    }
+
+    #foodOptions
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
