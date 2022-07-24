@@ -358,23 +358,23 @@ img {
     box-shadow: 2px 8px 4px #00000008;
     padding: 15px 25px 15px 15px;
     animation-name: fadeInUp;
-    animation-duration: 500ms;
+    animation-duration: 1200ms;
 }
 
 .rest-info-1 {
-    animation-delay: 150ms;
-}
-
-.rest-info-2 {
     animation-delay: 250ms;
 }
 
+.rest-info-2 {
+    animation-delay: 450ms;
+}
+
 .rest-info-3 {
-    animation-delay: 350ms;
+    animation-delay: 650ms;
 }
 
 .rest-info-4 {
-    animation-delay: 450ms;
+    animation-delay: 850ms;
 }
 
 .list-desc {
@@ -419,5 +419,8 @@ img {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        .list {
+            width: 30%;
+        }
     }
 }
