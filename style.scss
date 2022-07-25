@@ -354,18 +354,47 @@ img {
 .rest-info-1, .rest-info-2, .rest-info-3, .rest-info-4 {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: end;
     background-color: white;
     border-radius: 15px;
     box-shadow: 2px 8px 4px #00000008;
-    padding: 15px 25px 15px 15px;
     animation-name: fadeInUp;
     animation-duration: 1200ms;
-    > div {
+    overflow: hidden;
+    position: relative;
+    .rest-info-main {
+        width: 90%;
+        padding: 15px 25px 15px 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+        gap: 12px;
+    }
+    .rest-info-text {
         overflow: hidden;
     }
+    &:hover .price {
+        animation: slideInRight 1360ms;
+        animation-delay: 140ms;
+    }
+    &:hover .greenArrow {
+        visibility: block;
+        animation: slideInRight 1500ms;
+    }
+    &:hover .greenArrow > i {
+        animation: arrowTurn 1240ms;
+        animation-delay: 260ms;
+    }
 }
+
+@keyframes slideInRight {
+    100% {transform: translateX(-90px);}
+}
+
+@keyframes arrowTurn {
+    100% {transform: rotateZ(360deg);}    
+}
+
 
 .rest-info-1 {
     animation-delay: 250ms;
@@ -394,6 +423,24 @@ img {
     font-weight: bold;
     color: black;
     font-size: 16px;
+}
+
+.greenArrow {
+    position: absolute;
+    right: -95px;
+    background-color: $secondClr;
+    width: 90px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: slide-right 50ms;
+    i {
+        font-size: 30px;
+        color: white;
+    }
 }
 
 .commander {
