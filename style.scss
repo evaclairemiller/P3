@@ -359,6 +359,7 @@ img {
     box-shadow: 2px 8px 4px #00000008;
     animation-name: fadeInUp;
     animation-duration: 1200ms;
+    animation-timing-function: ease-in-out;
     overflow: hidden;
     position: relative;
     .rest-info-main {
@@ -373,12 +374,11 @@ img {
     .rest-info-text {
         overflow: hidden;
     }
-    &:hover .price {
-        animation: slideInRight 1360ms;
-        animation-delay: 140ms;
-    }
     &:hover .greenArrow {
-        visibility: block;
+        visibility: visible;
+        /* transform: scaleX(1);
+        transform-origin: right;
+        transition: transform .5s ease-in-out; */
         animation: slideInRight 1500ms;
     }
     &:hover .greenArrow > i {
@@ -427,9 +427,10 @@ img {
 
 .greenArrow {
     position: absolute;
+    visibility: hidden;
     right: -95px;
     background-color: $secondClr;
-    width: 90px;
+    width: 95px;
     height: 100%;
     display: flex;
     align-items: center;
