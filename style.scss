@@ -55,7 +55,7 @@ main {
         width: 165px;
         padding: 20px 0px 8px 0px;
     }
-    .logo {
+    #logo {
         box-shadow: 0px 0px 8px darkgrey;
     }
 }
@@ -363,38 +363,39 @@ img {
     overflow: hidden;
     position: relative;
     .rest-info-main {
-        width: 90%;
-        padding: 15px 25px 15px 15px;
+        width: calc(100% - 30px);
+        padding: 15px 15px 15px 15px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: end;
-        gap: 12px;
+        gap: 8px;
     }
     .rest-info-text {
         overflow: hidden;
     }
+    &:hover .price {
+        animation: slideInRight 600ms 10ms forwards;
+    }
     &:hover .greenArrow {
         visibility: visible;
-        /* transform: scaleX(1);
-        transform-origin: right;
-        transition: transform .5s ease-in-out; */
-        animation: slideInRight 1500ms;
+        animation: slideInRight 600ms 30ms forwards;
     }
     &:hover .greenArrow > i {
-        animation: arrowTurn 1240ms;
+        animation: arrowTurn 440ms;
         animation-delay: 260ms;
     }
 }
 
 @keyframes slideInRight {
-    100% {transform: translateX(-90px);}
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-80px);}
 }
 
 @keyframes arrowTurn {
+    0% {transform: rotateZ(0deg);}
     100% {transform: rotateZ(360deg);}    
 }
-
 
 .rest-info-1 {
     animation-delay: 250ms;
@@ -423,21 +424,23 @@ img {
     font-weight: bold;
     color: black;
     font-size: 16px;
+    width: 40px;
+    justify-content: end;
+    display: flex;
 }
 
 .greenArrow {
     position: absolute;
+    right: -80px;
     visibility: hidden;
-    right: -95px;
     background-color: $secondClr;
-    width: 95px;
+    width: 80px;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    animation: slide-right 50ms;
     i {
         font-size: 30px;
         color: white;

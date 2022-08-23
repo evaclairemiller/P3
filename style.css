@@ -44,6 +44,9 @@ main {
   width: 165px;
   padding: 20px 0px 8px 0px;
 }
+.intro #logo {
+  box-shadow: 0px 0px 8px darkgrey;
+}
 
 #location {
   display: flex;
@@ -110,7 +113,7 @@ main {
   right: 12.5px;
 }
 
-#foncList {
+.foncList {
   display: flex;
   flex-direction: column;
   padding: 30px 0px 30px 10px;
@@ -150,26 +153,26 @@ main {
   background-color: rgba(0, 0, 0, 0.031372549);
 }
 
-#restList {
+.restList {
   padding: 25px 0px 25px 0px;
   display: flex;
   flex-flow: column wrap;
   gap: 25px;
 }
-#restList--item {
+.restList--item {
   display: flex;
   flex-direction: column;
   border-radius: 16px;
   box-shadow: 2px 6px 30px #cccccc;
 }
-#restList--item img {
+.restList--item img {
   height: 180px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-#restList > a {
+.restList > a {
   position: relative;
 }
 
@@ -196,6 +199,9 @@ main {
   letter-spacing: 0.2px;
   line-height: 32px;
   font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .nouveau {
@@ -253,4 +259,249 @@ footer i {
   flex-direction: row;
   align-items: center;
   gap: 10px;
+}
+
+/* RESTAURANT PAGES */
+.fa-arrow-left {
+  position: absolute;
+  font-size: 20px;
+  left: 26px;
+  top: 20px;
+}
+
+.menu {
+  background-color: #f6f6f6;
+  padding: 5px 0px 0px 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  position: relative;
+  top: -50px;
+  width: 100%;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 30px 0px 20px;
+}
+.name .fa-solid {
+  font-weight: 100;
+  font-size: 22px;
+}
+.name .fa-solid:hover {
+  background: linear-gradient(175deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 95%);
+  font-weight: 600;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 280px;
+  width: 100%;
+}
+
+.list {
+  padding: 20px 15px 20px 15px;
+}
+.list > p {
+  padding-top: 10px;
+  border-bottom: #99E2D0 3px;
+  border-style: solid;
+  width: 45px;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.list .detail-list {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+.rest-info-1, .rest-info-2, .rest-info-3, .rest-info-4 {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 2px 8px 4px rgba(0, 0, 0, 0.031372549);
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-duration: 1200ms;
+          animation-duration: 1200ms;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  overflow: hidden;
+  position: relative;
+}
+.rest-info-1 .rest-info-main, .rest-info-2 .rest-info-main, .rest-info-3 .rest-info-main, .rest-info-4 .rest-info-main {
+  width: calc(100% - 30px);
+  padding: 15px 15px 15px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  gap: 8px;
+}
+.rest-info-1 .rest-info-text, .rest-info-2 .rest-info-text, .rest-info-3 .rest-info-text, .rest-info-4 .rest-info-text {
+  overflow: hidden;
+}
+.rest-info-1:hover .price, .rest-info-2:hover .price, .rest-info-3:hover .price, .rest-info-4:hover .price {
+  -webkit-animation: slideInRight 600ms 10ms forwards;
+          animation: slideInRight 600ms 10ms forwards;
+}
+.rest-info-1:hover .greenArrow, .rest-info-2:hover .greenArrow, .rest-info-3:hover .greenArrow, .rest-info-4:hover .greenArrow {
+  visibility: visible;
+  -webkit-animation: slideInRight 600ms 30ms forwards;
+          animation: slideInRight 600ms 30ms forwards;
+}
+.rest-info-1:hover .greenArrow > i, .rest-info-2:hover .greenArrow > i, .rest-info-3:hover .greenArrow > i, .rest-info-4:hover .greenArrow > i {
+  -webkit-animation: arrowTurn 440ms;
+          animation: arrowTurn 440ms;
+  -webkit-animation-delay: 260ms;
+          animation-delay: 260ms;
+}
+
+@-webkit-keyframes slideInRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-80px);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-80px);
+  }
+}
+@-webkit-keyframes arrowTurn {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes arrowTurn {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.rest-info-1 {
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+}
+
+.rest-info-2 {
+  -webkit-animation-delay: 450ms;
+          animation-delay: 450ms;
+}
+
+.rest-info-3 {
+  -webkit-animation-delay: 650ms;
+          animation-delay: 650ms;
+}
+
+.rest-info-4 {
+  -webkit-animation-delay: 850ms;
+          animation-delay: 850ms;
+}
+
+.list-desc {
+  font-size: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.price {
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
+  width: 40px;
+  justify-content: end;
+  display: flex;
+}
+
+.greenArrow {
+  position: absolute;
+  right: -80px;
+  visibility: hidden;
+  background-color: #99E2D0;
+  width: 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.greenArrow i {
+  font-size: 30px;
+  color: white;
+}
+
+.commander {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .foncList {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .foncList--item {
+    width: 30%;
+    gap: 4px;
+  }
+  .restList {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .restList a {
+    width: 30%;
+  }
+  #foodOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #foodOptions .list {
+    width: 30%;
+  }
 }/*# sourceMappingURL=style.css.map */
