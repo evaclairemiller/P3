@@ -357,9 +357,8 @@ img {
     background-color: white;
     border-radius: 15px;
     box-shadow: 2px 8px 4px #00000008;
-    animation-name: fadeInUp;
-    animation-duration: 1200ms;
-    animation-timing-function: ease-in-out;
+    animation: fadeInUp 800ms ease-in-out forwards;
+    opacity: 0;
     overflow: hidden;
     position: relative;
     .rest-info-main {
@@ -373,16 +372,21 @@ img {
     }
     .rest-info-text {
         overflow: hidden;
+        animation: expandText;
+        transition: 400ms linear;
+        transition-delay: 50ms;
+        width: calc(100% - 45px);
     }
     &:hover .rest-info-text {
-        animation: shrinkText 600ms 40ms forwards;
+        width: calc(100% - 110px);
+        /* animation: shrinkText 600ms 40ms forwards; */
     }
     &:hover .price {
-        animation: slideInRightPrice 600ms 40ms forwards;
+        right: 70px;
     }
     &:hover .greenArrow {
         visibility: visible;
-        animation: slideInRight 600ms forwards;
+        right: 0;
     }
     &:hover .greenArrow > i {
         animation: arrowTurn 440ms;
@@ -390,40 +394,21 @@ img {
     }
 }
 
-@keyframes shrinkText {
-    0% {width: calc(100% - 45px)}
-    100% {width: calc(100% - 110px)}
-}
-
-@keyframes slideInRight {
-    0% {transform: translateX(0);}
-    100% {transform: translateX(-80px);}
-}
-
-@keyframes slideInRightPrice {
-    0% {transform: translateX(0);}
-    100% {transform: translateX(-70px);}
-}
-
 @keyframes arrowTurn {
     0% {transform: rotateZ(0deg);}
     100% {transform: rotateZ(360deg);}    
 }
 
-.rest-info-1 {
-    animation-delay: 250ms;
-}
-
 .rest-info-2 {
-    animation-delay: 450ms;
+    animation-delay: 300ms;
 }
 
 .rest-info-3 {
-    animation-delay: 650ms;
+    animation-delay: 500ms;
 }
 
 .rest-info-4 {
-    animation-delay: 850ms;
+    animation-delay: 700ms;
 }
 
 .list-desc {
@@ -440,12 +425,15 @@ img {
     width: 40px;
     justify-content: end;
     display: flex;
+    position: relative;
+    right: 0;
+    transition: 400ms linear;
+    transition-delay: 50ms;
 }
 
 .greenArrow {
     position: absolute;
     right: -80px;
-    visibility: hidden;
     background-color: $secondClr;
     width: 80px;
     height: 100%;
@@ -454,6 +442,7 @@ img {
     justify-content: center;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    transition: 400ms linear;
     i {
         font-size: 30px;
         color: white;
